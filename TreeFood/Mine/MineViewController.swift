@@ -121,6 +121,7 @@ class MineViewController: UIViewController {
 
 extension MineViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        return
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.section {
         case 0:
@@ -179,7 +180,7 @@ extension MineViewController: UITableViewDataSource {
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: MineBodyCellID, for: indexPath) as! MIneBodyTableViewCell
-            let arr = ["本周食谱", "最近偏爱"]
+            let arr = ["已经去过", "最近偏爱"]
             cell.updateUI(with: arr[indexPath.row])
             return cell
         default:

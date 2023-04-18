@@ -25,7 +25,7 @@ PODS:
   - FSCalendar (2.8.2)
   - HandyJSON (5.0.0-beta.1)
   - LookinServer (1.0.4)
-  - Macaw (0.9.8):
+  - Macaw (0.9.9):
     - SWXMLHash
   - pop (1.0.11)
   - SnapKit (4.2.0)
@@ -86,12 +86,12 @@ SPEC CHECKSUMS:
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
-  Macaw: a361fab744f87f108f0376c3204357e4068f2630
+  Macaw: d683339ff44d49c16776ec2bde7aecfd4ba2a3a4
   pop: ae3ae187018759968252242e175c21f7f9be5dd2
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   SWXMLHash: 9d851ed3edf48ec2bd0db98f0cda0ad4136d75e3
 
-PODFILE CHECKSUM: edce11d336f5f295e183f78ac7d0023e63a6d8bf
+PODFILE CHECKSUM: 1fecfebdc7c81faf6f394cc5fabbdb394bbbc484
 
 COCOAPODS: 1.11.2

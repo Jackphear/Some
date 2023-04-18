@@ -28,6 +28,8 @@ class HomeViewController: UIViewController {
     
     private var searchData = [Dish]()
     private var recommendData = [Dish]()
+    private var anotherData = [Dish]()
+    private var anothertype = [Species]()
     private var supplements = [Supplement]()
     private var FoodType = [Species]()
 
@@ -165,38 +167,24 @@ class HomeViewController: UIViewController {
         }
 
         // 每日推荐根据时间推荐
+        var isok = false
         for item in homeData.dishes {
             let date = Date()
             let type = date.getSpecie()
-            switch type {
-            case .Breakfast:
-                if item.speciesName == type.rawValue {
+            if item.speciesName == type.rawValue {
+                for dish in item.content {
+                    recommendData.append(dish)
+                    FoodType.append(type)
+                }
+            }
+            if !isok {
+                if item.speciesName != type.rawValue {
                     for dish in item.content {
-                        recommendData.append(dish)
-                        FoodType.append(type)
+                        anotherData.append(dish)
+                        anothertype.append(type)
                     }
                 }
-            case .Launch:
-                if item.speciesName == type.rawValue {
-                    for dish in item.content {
-                        recommendData.append(dish)
-                        FoodType.append(type)
-                    }
-                }
-            case .Dinner:
-                if item.speciesName == type.rawValue {
-                    for dish in item.content {
-                        recommendData.append(dish)
-                        FoodType.append(type)
-                    }
-                }
-            case .Snacks:
-                if item.speciesName == type.rawValue {
-                    for dish in item.content {
-                        recommendData.append(dish)
-                        FoodType.append(type)
-                    }
-                }
+                isok = true
             }
         }
     }
@@ -204,7 +192,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return 3
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -265,41 +253,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.updateUI(with: recommendData, FoodType: FoodType)
             return cell
         case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SupplementCellID, for: indexPath) as! SupplementCollectionViewCell
-            cellAnimation(cell: cell, interval: 0.25)
-            cell.moreButtonBlock = {
-                let vc = MoreSupplementViewController()
-                vc.updatUI(with: self.supplements, title: "营养补给")
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            cell.cellCallBack = { (data) in
-                let vc = SupplementDetailViewController()
-                vc.updateUI(with: data)
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            cell.updateUI(with: homeData.nutritionalSupplement)
-            return cell
-        case 3:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SuggesttCellID, for: indexPath) as! SuggestCollectionViewCell
-            cellAnimation(cell: cell, interval: 0.25)
-            cell.moreButtonBlock = {
-                let vc = MoreSupplementViewController()
-                vc.updatUI(with: self.supplements, title: "建议补充")
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            cell.cellCallBack = { data in
-                let vc = SupplementDetailViewController()
-                vc.updateUI(with: data)
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            cell.updateUI(with: homeData.suggestSupplement)
-            return cell
-        case 4:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PreferenceCellID, for: indexPath) as! PreferenceCollectionViewCell
             cellAnimation(cell: cell, interval: 0.25)
             cell.moreButtonBlock = {
                 let vc = MoreDishViewController()
-                vc.updateUI(with: self.recommendData, title: "最近偏爱")
+                vc.updateUI(with: self.anotherData, title: "最近偏爱")
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             cell.cellCallBack = { (data, type) in
@@ -322,7 +280,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
-            cell.updateUI(with: recommendData, FoodType: FoodType)
+            cell.updateUI(with: anotherData, FoodType: anothertype)
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PreferenceCellID, for: indexPath) as! PreferenceCollectionViewCell

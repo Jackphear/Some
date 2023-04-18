@@ -58,33 +58,6 @@ class AnalyzeViewController: UIViewController {
         
         navigation.bar.isShadowHidden = true
         navigation.bar.alpha = 0
-        
-        addChild(pageViewController)
-        view.addSubview(pageViewController.view)
-        pageViewController.didMove(toParent: self)
-
-        view.addSubview(topImage)
-
-        topImage.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(kStatusBarHeight)
-            make.centerX.equalTo(view)
-            make.height.equalTo(80.fit)
-            make.width.equalTo(80.fit)
-        }
-        view.addSubview(pageControl)
-
-        pageControl.snp.makeConstraints { make in
-            make.top.equalTo(topImage.snp.bottom).offset(20.fit)
-            make.centerX.equalTo(view)
-            make.height.equalTo(30.fit)
-            make.width.equalTo(100.fit)
-        }
-        pageViewController.view.snp.makeConstraints { make in
-            make.top.equalTo(topImage.snp.bottom).offset(10.fit)
-            make.centerX.equalTo(view)
-            make.height.equalTo(self.view.frame.size.height)
-            make.width.equalTo(CFWidth)
-        }
     }
 }
 

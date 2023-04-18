@@ -116,7 +116,7 @@ class CircleProgressView: UIView {
         let strlen = str.count
         let attr1: [NSAttributedString.Key: Any] = [.font: UIFont(name: "PingFang SC", size: 13)!, .foregroundColor: UIColor(red: 0.76, green: 0.76, blue: 0.76, alpha: 1)]
         let attr2: [NSAttributedString.Key: Any] = [.font: UIFont(name: "PingFangSC-Light", size: 25)!, .foregroundColor: UIColor(red: 0.96, green: 0.46, blue: 0.33, alpha: 1)]
-        let attrString = NSMutableAttributedString(string: "剩余\n" + str + "\n千卡")
+        let attrString = NSMutableAttributedString(string: "剩余\n" + str + "\n运动量")
         attrString.addAttributes(attr1, range: NSRange(location: 0, length: 3))
         attrString.addAttributes(attr2, range: NSRange(location: 3, length: strlen))
         attrString.addAttributes(attr1, range: NSRange(location: strlen + 3, length: attrString.length - strlen - 3))

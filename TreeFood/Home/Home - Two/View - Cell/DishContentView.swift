@@ -110,14 +110,14 @@ class DishContentView: UIView {
         self.addSubview(topRightAddButtonImageView)
         self.addSubview(topRightAddButton)
         
-        self.addSubview(ingredientsBackView)
-        ingredientsBackView.addSubview(ingredientsTitleLabel)
-        ingredientsBackView.addSubview(ingredientsTableView)
+        //self.addSubview(ingredientsBackView)
+        //ingredientsBackView.addSubview(ingredientsTitleLabel)
+        //ingredientsBackView.addSubview(ingredientsTableView)
         
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(30.fit)
             make.left.equalToSuperview().offset(25.fit)
-            make.width.equalTo(150.fit)
+            make.width.equalTo(200.fit)
             make.height.equalTo(30.fit)
         }
         
@@ -125,43 +125,43 @@ class DishContentView: UIView {
             make.left.equalToSuperview().offset(25.fit)
             make.top.equalTo(self.titleLabel.snp.bottom).offset(10.fit)
             make.width.equalTo(CFWidth - 50.fit)
-            make.height.equalTo(120.fit)
+            make.height.equalTo(300.fit)
         }
 
         topRightAddButtonImageView.snp.makeConstraints { (make) in
-            make.left.equalTo(self.titleLabel.snp.right).offset(150.fit)
+            make.left.equalTo(self.titleLabel.snp.right).offset(120.fit)
             make.centerY.equalTo(self.titleLabel.snp.centerY)
             make.height.equalTo(30.fit)
             make.width.equalTo(70.fit)
         }
 
         topRightAddButton.snp.makeConstraints { (make) in
-            make.left.equalTo(self.titleLabel.snp.right).offset(150.fit)
+            make.left.equalTo(self.titleLabel.snp.right).offset(120.fit)
             make.centerY.equalTo(self.titleLabel.snp.centerY)
             make.height.equalTo(30.fit)
             make.width.equalTo(70.fit)
         }
         
-        ingredientsBackView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(200.fit)
-            make.left.equalToSuperview()
-            make.bottom.equalToSuperview().offset(206)
-            make.width.equalTo(CFWidth)
-        }
-        
-        ingredientsTitleLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(36.fit)
-            make.top.equalToSuperview().offset(20.fit)
-            make.width.equalTo(40.fit)
-            make.height.equalTo(24.fit)
-        }
-
-        ingredientsTableView.snp_makeConstraints { (make) in
-            make.left.equalToSuperview()
-            make.width.equalTo(CFWidth)
-            make.top.equalTo(self.ingredientsTitleLabel.snp.bottom).offset(6.fit)
-            make.bottom.equalToSuperview()
-        }
+//        ingredientsBackView.snp.makeConstraints { (make) in
+//            make.top.equalToSuperview().offset(200.fit)
+//            make.left.equalToSuperview()
+//            make.bottom.equalToSuperview().offset(206)
+//            make.width.equalTo(CFWidth)
+//        }
+//
+//        ingredientsTitleLabel.snp.makeConstraints { (make) in
+//            make.left.equalToSuperview().offset(36.fit)
+//            make.top.equalToSuperview().offset(20.fit)
+//            make.width.equalTo(40.fit)
+//            make.height.equalTo(24.fit)
+//        }
+//
+//        ingredientsTableView.snp_makeConstraints { (make) in
+//            make.left.equalToSuperview()
+//            make.width.equalTo(CFWidth)
+//            make.top.equalTo(self.ingredientsTitleLabel.snp.bottom).offset(6.fit)
+//            make.bottom.equalToSuperview()
+//        }
     }
     
     @objc func clickAddButton(){

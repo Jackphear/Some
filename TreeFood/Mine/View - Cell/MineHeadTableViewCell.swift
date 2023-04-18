@@ -81,6 +81,7 @@ class MineHeadTableViewCell: UITableViewCell {
         self.weightLabel.text = data.weight
         self.heightLabel.text = data.height
         self.userImg.image = UIImage(contentsOfFile: data.userImage)
+        self.userImg.backgroundColor = .black
         if data.sex == "女" {
             self.sexIcon.image = UIImage(named: "woman")
         } else {

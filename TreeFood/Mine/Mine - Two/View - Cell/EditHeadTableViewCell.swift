@@ -11,7 +11,7 @@ class EditHeadTableViewCell: UITableViewCell {
     
     public func updateUI(with title:String, image: UIImage) {
         self.contentLabel.text = title
-        self.userImage.image = image
+       
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

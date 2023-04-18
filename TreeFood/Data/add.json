@@ -3,7 +3,7 @@
     "data": {
         "eats": [
             {
-                "categoryName": "早餐",
+                "categoryName": "湖南",
                 "content": [
                     {
                         "image": "鳕鱼",
@@ -86,7 +86,7 @@
                 ]
             },
             {
-                "categoryName": "午餐",
+                "categoryName": "四川",
                 "content": [
                     {
                         "image": "蒸白米饭",
@@ -163,7 +163,7 @@
                 ]
             },
             {
-                "categoryName": "晚餐",
+                "categoryName": "海南",
                 "content": [
                     {
                         "image": "煮白米饭",
@@ -240,7 +240,7 @@
                 ]
             },
             {
-                "categoryName": "小食",
+                "categoryName": "湖北",
                 "content": [
                     {
                         "image": "橘子",

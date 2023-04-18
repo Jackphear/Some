@@ -89,8 +89,8 @@ struct Preference: HandyJSON {
 // MARK: - 用餐类型
 
 public enum Species: String {
-    case Breakfast = "早餐"
-    case Launch = "午餐"
-    case Dinner = "晚餐"
-    case Snacks = "小食"
+    case Breakfast = "湖南"
+    case Launch = "四川"
+    case Dinner = "海南"
+    case Snacks = "湖北"
 }
